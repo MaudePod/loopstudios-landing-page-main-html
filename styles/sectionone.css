@@ -1,0 +1,140 @@
+nav {
+    display: grid;
+    width: 80cqw;
+    grid-template-columns: auto min-content;
+    margin-top: 2cqh;
+    align-self: self-start;
+}
+
+menu[id="top-menu"],
+menu[id="footer-menu"] {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    cursor: pointer;
+}
+
+menu[id="footer-menu"] {
+    width: min-content;
+    padding-left: 0;
+}
+
+menu[id="footer-menu"]+span {
+    text-wrap: nowrap;
+    justify-self: end;
+    order: 4;
+}
+
+section[class="features"] {
+    border: 2px solid;
+    height: 60%;
+    width: 45%;
+    justify-self: start;
+    margin-left: 10%;
+    padding: 1%;
+    align-self: start;
+    user-select: none;
+    text-transform: uppercase;
+    container: features / inline-size;
+}
+
+section[class="features"] span {
+    font-size: 10cqi;
+}
+
+input[name="menu"] {
+    display: none;
+}
+
+label[for="close-menu"],
+label[for="open-menu"] {
+    display: none;
+}
+
+section[class="mobile-menu-main"] {
+    display: none;
+}
+menu[id="top-menu"] li  {
+    height: fit-content;
+    width: 100%;
+}
+menu[id="top-menu"] li:hover::after{
+    content: '';
+    display: grid;
+    border-bottom: 2px solid white ;
+    width: 50%;
+    margin: 0 auto;
+}
+@container body (inline-size<1000px) {
+ 
+    section[class="features"] {
+        height: auto;
+        width: 80%;
+        font-size: 12cqi;
+        margin-top: 20%;
+        padding: 3%;
+    }
+    body:has(:not(input[id="close-menu"]:checked)) {
+        label[for="open-menu"] {
+            display: grid;
+        }
+
+        label[for="close-menu"] {
+            display: none;
+        }
+
+    }
+
+    body:has(input[id="open-menu"]:checked) {
+        label[for="close-menu"] {
+            display: grid;
+        }
+
+        label[for="open-menu"] {
+            display: none;
+        }
+
+        section[class="mobile-menu-main"] {
+            width: 100svw;
+            height: 100svh;
+            background-color: black;
+            z-index: 0;
+            position: fixed;
+            top: 0;
+            text-transform: uppercase;
+            display: grid;
+            align-content: center;
+        }
+
+        main {
+            position: fixed;
+        }
+
+        menu[id="middle-menu"] {
+            display: grid;
+            row-gap: 20px;
+            font-size: 2em;
+            margin-right: 10%;
+        }
+
+
+    }
+
+    body:has(input[id="close-menu"]:checked) {
+        label[for="open-menu"] {
+            display: grid;
+        }
+
+        label[for="close-menu"] {
+            display: none;
+        }
+
+    }
+
+}
+@container body ( 800px <= inline-size<1000px) {
+    section[class="features"] {
+        margin-top: 5%;
+    }
+}

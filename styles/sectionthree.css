@@ -1,0 +1,94 @@
+section[class="product-card"] {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+section[class="product-card-header"] {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px 0px 10px 0px;
+    color: var(--black);
+}
+
+section[class="product-card-body"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80cqw;
+    gap: 10px;
+}
+
+section[class="product-container"] {
+    display: none;
+    place-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+section[class="product-container"]:nth-of-type(-n+8) {
+    display: grid;
+}
+
+section[class="product-container"]:hover {
+    filter: contrast(0.5);
+}
+section[class="product-container"]:hover section[class="product-label"]  {
+    color: black;
+}
+
+section[class="product-label"] {
+    position: absolute;
+    width: 80%;
+    font-size: 2.8cqi;
+    bottom: 5%;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+input[id="see-all"] {
+    display: none;
+}
+
+label[for="see-all"] {
+    border: 1px solid;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+
+section[class="product-card"]:has(input[id="see-all"]:checked) {
+    section[class="product-container"] {
+        display: grid;
+    }
+}
+@container body (inline-size<1000px) {
+    section[class="product-card-header"] {
+        order: 9999;
+        place-content: center;
+    }
+
+    section[class="product-card"]:has(input[id="see-all"]:checked) {
+        label[for="see-all"] {
+            display: none;
+        }
+    }
+
+    section[class="product-card-header"] span {
+        display: none;
+    }
+    section[class="product-card-body"] img {
+        width: 80cqw;
+    }
+    section[class="product-card-body"] {
+        grid-template-columns: 1fr;
+    }
+    section[class="product-label"] {
+        width: 50%;
+        font-size: 7cqi;
+        bottom: 5%;
+        left: 5%;
+    }
+
+
+}
