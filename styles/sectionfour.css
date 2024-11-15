@@ -16,6 +16,7 @@ section[class="social"] {
 menu[id="footer-menu"] li {
     height: fit-content;
     width: 100%;
+    font-family: 'Alata';
 }
 
 menu[id="footer-menu"] li:hover::after {
@@ -26,14 +27,18 @@ menu[id="footer-menu"] li:hover::after {
     margin: 0 auto;
 }
 
-section[class="social"] svg {
+section[class="social"] span,
+    section[class="social"] svg {
     height: 28px;
     width: 100%;
 }
 
-section[class="social"] svg:hover {
+section[class="social"] span:hover::after {
+    content: '';
+    display: grid;
     border-bottom: 2px solid white;
-    margin: 0 auto;
+    width: 30%;
+    transform: translateX(50%);
 }
 
 div[class="attribution"] {

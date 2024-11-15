@@ -13,6 +13,7 @@ menu[id="footer-menu"] {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
     cursor: pointer;
+    font-family: Alata;
 }
 
 menu[id="footer-menu"] {
@@ -24,6 +25,7 @@ menu[id="footer-menu"]+span {
     text-wrap: nowrap;
     justify-self: end;
     order: 4;
+    font-family: 'Alata';
 }
 
 section[class="features"] {
@@ -36,6 +38,7 @@ section[class="features"] {
     align-self: start;
     user-select: none;
     text-transform: uppercase;
+    font-family: 'Josefin Sans';
     container: features / inline-size;
 }
 
@@ -55,19 +58,28 @@ label[for="open-menu"] {
 section[class="mobile-menu-main"] {
     display: none;
 }
-menu[id="top-menu"] li  {
+
+menu[id="top-menu"] li {
     height: fit-content;
     width: 100%;
 }
-menu[id="top-menu"] li:hover::after{
+
+menu[id="top-menu"] li:hover::after {
     content: '';
     display: grid;
-    border-bottom: 2px solid white ;
+    border-bottom: 2px solid white;
     width: 50%;
     margin: 0 auto;
 }
+
+@container body (inline-size>1400px) {
+    section[class="features"] {
+        padding: 3%;
+    }
+}
+
 @container body (inline-size<1000px) {
- 
+
     section[class="features"] {
         height: auto;
         width: 80%;
@@ -75,6 +87,7 @@ menu[id="top-menu"] li:hover::after{
         margin-top: 20%;
         padding: 3%;
     }
+
     body:has(:not(input[id="close-menu"]:checked)) {
         label[for="open-menu"] {
             display: grid;
@@ -133,7 +146,8 @@ menu[id="top-menu"] li:hover::after{
     }
 
 }
-@container body ( 800px <= inline-size<1000px) {
+
+@container body (800px <=inline-size<1000px) {
     section[class="features"] {
         margin-top: 5%;
     }

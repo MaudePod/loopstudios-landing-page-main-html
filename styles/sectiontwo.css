@@ -1,68 +1,71 @@
-
-
-section[class="vr-card"] {
-    position: relative;
-    display: grid;
-    grid-template-columns: 70fr 30fr;
-    place-self: center;
-    width: 80cqw;
-}
-
-section[class="vr-card-image"] img {
-    height: 100%;
-}
-
-section[class="vr-card-body"] {
-    background: white;
-    height: 50%;
-    color: black;
-    position: absolute;
-    bottom: 0;
-    width: 35cqw;
-    right: 0;
-    padding: 5% 5% 0% 5%;
-    display: grid;
-}
-
-section[class="vr-card-header"] {
-    font-size: 2.5em;
-    text-transform: uppercase;
-}
-
-section[class="vr-card-info"] {
-    align-self: end;
-}
-@container body (inline-size<1000px) {
     section[class="vr-card"] {
-        position: unset;
+        position: relative;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 70fr 30fr;
         place-self: center;
         width: 80cqw;
     }
 
-    section[class="vr-card-body"] {
+    section[class="vr-card-image"] img {
         height: 100%;
-        padding: 5%;
-        position: unset;
-        width: unset;
     }
 
-    section[class="vr-card-image"] img {
-        width: 100%;
+    section[class="vr-card-body"] {
+        background: white;
+        height: 50%;
+        color: black;
+        position: absolute;
+        bottom: 0;
+        width: 35cqw;
+        right: 0;
+        padding: 5% 5% 0% 5%;
+        display: grid;
     }
 
     section[class="vr-card-header"] {
-        font-size: 1.8em;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+    }
+
+    section[class="vr-card-text"] {
+        font-family: 'Alata';
+        font-weight: 300;
     }
 
     section[class="vr-card-info"] {
-        display: grid;
-        place-self: center;
-        width: 90%;
-        gap: 10px;
+        align-self: end;
     }
 
+    @container body (inline-size<1000px) {
+        section[class="vr-card"] {
+            position: unset;
+            display: grid;
+            grid-template-columns: 1fr;
+            place-self: center;
+            width: 80cqw;
+        }
 
+        section[class="vr-card-body"] {
+            height: 100%;
+            padding: 5%;
+            position: unset;
+            width: unset;
+        }
 
-}
+        section[class="vr-card-image"] img {
+            width: 100%;
+        }
+
+        section[class="vr-card-header"] {
+            font-size: 1.8em;
+        }
+
+        section[class="vr-card-info"] {
+            display: grid;
+            place-self: center;
+            width: 90%;
+            gap: 10px;
+        }
+    }

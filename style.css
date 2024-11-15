@@ -8,6 +8,14 @@
     --darkGray: hsl(0, 0%, 55%);
     --veryDarkGray: hsl(0, 0%, 41%);
 }
+@font-face {
+    font-family: 'Alata';
+    src: url(./fonts/Alata/Alata-Regular.ttf);
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(./fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
 
 body {
     width: 100svw;
